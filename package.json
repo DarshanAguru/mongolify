@@ -1,6 +1,6 @@
 {
   "name": "mongolify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Schema-driven DTO & validator toolkit forMongoose schemas (no DB connection). Caching, JSON Schema compiler, Ajv engine, policy hooks, query helpers. Works in JS & TS.",
   "type": "module",
   "main": "./dist/cjs/index.js",
