@@ -58,7 +58,12 @@ export const applyFilterToArray = <T extends Record<string, any>>(
     if (isInOperator(expr)) {
       // Using Set for O(1) membership
       const set = new Set(expr.$in as readonly unknown[]);
-      return set.has(val as unknown);
+      const v = val as unknown;
+      if(Array.isArray(v))
+      {
+        return v.some((element) => set.has(element as unknown));
+      }
+      return set.has(v as unknown);
     }
 
     // Regex (only if the value is string-like)
