@@ -1,0 +1,70 @@
+{
+  "name": "mongolify",
+  "version": "1.0.0",
+  "description": "Schema-driven DTO & validator toolkit forMongoose schemas (no DB connection). Caching, JSON Schema compiler, Ajv engine, policy hooks, query helpers. Works in JS & TS.",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "src"
+  ],
+  "scripts": {
+    "example": "npm run dev --workspace=mongolify-example",
+    "clean": "rmdir /s dist",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/copy-cjs-package.js",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types",
+    "prepare": "npm run build",
+    "format": "prettier . --write"
+  },
+  "keywords": [
+    "mongoose",
+    "dto",
+    "validation",
+    "ajv",
+    "json-schema",
+    "policy",
+    "query",
+    "typescript",
+    "javascript",
+    "library"
+  ],
+  "author": "Darshan Aguru <agurudf@gmail.com> (https://github.com/DarshanAguru)",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarshanAguru/mongolify.git"
+  },
+  "homepage": "https://github.com/DarshanAguru/mongolify",
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "typescript": "^5.6.3"
+  },
+  "workspaces": [
+    "example"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  }
+}

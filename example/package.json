@@ -1,0 +1,35 @@
+{
+  "name": "mongolify-example",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "private": true,
+  "keywords": [
+    "example",
+    "server",
+    "mongoose",
+    "dto",
+    "validation",
+    "ajv",
+    "json-schema",
+    "policy",
+    "query",
+    "typescript",
+    "javascript",
+    "library"
+  ],
+  "author": "Darshan Aguru",
+  "license": "MIT",
+  "description": "Example server file for testing `mongolify` library",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
